@@ -59,4 +59,4 @@ function isStringUUID(value) {
   return UUIDRegex.test(value);
 }
 
-server.listen(10100);
+server.listen(process.env.PORT);
