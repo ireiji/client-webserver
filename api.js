@@ -40,7 +40,7 @@ var server = http.createServer(function (req, res) {
         res.end(autheduuids.join("\n"));
     } else {
         res.writeHead(200);
-        res.end('Welcome to our server!\nSit back, relax and enjoy the cup of coffee.');
+        res.end('Welcome to our server!\nSit back, relax and enjoy a cup of coffee.');
     }
 });
 
