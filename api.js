@@ -1,17 +1,10 @@
 const express = require('express');
-const { hostname } = require('os');
 const url = require('url');
 
 const autheduuids = [];
-const authedips = []; // Don't worry. we don't log IPs LOL.
+const authedips = [];
 
 const app = express();
-
-const serverless = require('serverless-http')
-
-// Middleware to parse JSON and urlencoded data
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 function validateUUID(uuid) {
   if (!(isStringUUID(uuid) || isStringUUID(uuid, false)))
@@ -62,9 +55,7 @@ app.get('/adduuid', (req, res) => {
   }
 });
 
-const port = 10100;
+const port = process.env.PORT || 10100;
 app.listen(port, () => {
-  console.log(`Server running on http://${hostname}:${port}`);
+  console.log(`Server running`);
 });
-
-module.exports.handler = serverless(app)
