@@ -55,7 +55,7 @@ app.get('/adduuid', (req, res) => {
   }
 });
 
-const port = process.env.PORT || 10100;
+const port = 10100;
 app.listen(port, () => {
   console.log(`Server running`);
 });
